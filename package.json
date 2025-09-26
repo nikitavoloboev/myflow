@@ -7,9 +7,9 @@
     "dev": "blade",
     "build": "blade build",
     "serve": "blade serve",
-    "db:migrate": "bunx ronin diff ronin/ronin-schema.ts",
-    "db:generate": "ronin types && ronin types --zod",
-    "db:apply": "bunx ronin apply"
+    "db:migrate": "blade diff ronin/ronin-schema.ts",
+    "db:generate": "blade types && ronin types --zod",
+    "db:apply": "blade apply ronin/ronin-schema.ts"
   },
   "dependencies": {
     "better-auth": "^1.3.18",
