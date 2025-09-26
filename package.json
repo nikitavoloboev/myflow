@@ -1,0 +1,25 @@
+{
+  "name": "myflow",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "blade",
+    "build": "blade build",
+    "serve": "blade serve"
+  },
+  "author": "ronin",
+  "dependencies": {
+    "blade": "3.18.11",
+    "react": "0.0.0-experimental-df12d7eac-20230510",
+    "react-dom": "0.0.0-experimental-df12d7eac-20230510"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.4",
+    "@types/react-dom": "19.1.5",
+    "typescript": "5.9.2"
+  },
+  "prettier": {
+    "semi": false
+  }
+}
