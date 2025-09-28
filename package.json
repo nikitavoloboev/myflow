@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "better-auth": "^1.3.18",
-    "blade": "3.18.16",
+    "blade": "3.18.19",
     "blade-better-auth": "^3.18.16",
     "react": "0.0.0-experimental-df12d7eac-20230510",
     "react-dom": "0.0.0-experimental-df12d7eac-20230510"
