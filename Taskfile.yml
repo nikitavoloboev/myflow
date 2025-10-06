@@ -1,0 +1,52 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Validate bun installation and required environment variables.
+    silent: true
+    cmds:
+      - |
+          bash <<'BASH'
+          set -euo pipefail
+
+          if ! command -v bun >/dev/null 2>&1; then
+            echo "Error: bun is not installed. Install it from https://bun.sh before continuing." >&2
+            exit 1
+          fi
+
+          if [ ! -f .env ]; then
+            echo "Error: .env file is missing. Add RONIN_TOKEN and RONIN_ID as documented in readme.md." >&2
+            exit 1
+          fi
+
+          required_vars=(RONIN_TOKEN RONIN_ID)
+          missing=0
+
+          for var in "${required_vars[@]}"; do
+            unset "$var"
+          done
+
+          set -a
+          source ./.env
+          set +a
+
+          for var in "${required_vars[@]}"; do
+            value="${!var:-}"
+            if [ -z "$value" ]; then
+              echo "Error: ${var} is missing or empty in .env" >&2
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -ne 0 ]; then
+            echo "Fix the variables in .env and rerun task setup." >&2
+            exit 1
+          fi
+
+          echo "✔️ you are setup"
+          BASH
+
+  dev:
+    desc: Run the local development server.
+    cmds:
+      - bun dev

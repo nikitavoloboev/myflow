@@ -9,23 +9,12 @@ This is being built as a better place to share and edit configs like [this one](
 > [!WARNING]
 > This site is built with [blade](https://blade.im) and its yet unreleased DB. It will be possible to run locally very soon. Below are internal setup instructions for now.
 
-In `.env`:
-
-```
-RONIN_TOKEN=""
-RONIN_ID=""
-```
-
-```
-bun i
-```
+Install [Task](https://taskfile.dev/docs/installation). Then run `task setup` & follow instructions until it says `✔️ you are setup`. As mentioned above, no point trying to run this till blade releases public DBs so this is for internal documentation for now.
 
 ## Run
 
-```
-bun dev
-```
+`task dev` will start web server, can then open `localhost:`.
 
-### 🖤
+## Commands
 
-[![Discord](https://go.nikiv.dev/badge-discord)](https://go.nikiv.dev/discord) [![X](https://go.nikiv.dev/badge-x)](https://x.com/nikitavoloboev) [![nikiv.dev](https://go.nikiv.dev/badge-nikiv)](https://nikiv.dev)
+Run `task` to see all possible commands.
