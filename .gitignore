@@ -27,3 +27,4 @@ private
 .blade
 
 .blade/dist/
+scripts/run.ts

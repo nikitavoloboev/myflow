@@ -50,3 +50,8 @@ tasks:
     desc: Run the local development server.
     cmds:
       - bun dev
+
+  script:
+    desc: Watch and run scripts/run.ts via bun.
+    cmds:
+      - bun --watch scripts/run.ts
